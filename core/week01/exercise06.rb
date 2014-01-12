@@ -7,7 +7,7 @@
 #
 
 def convert(fahrenheit)
-  temperature = (fahrenheit - 32) * 5 / 9  
+  (fahrenheit - 32) * 5 / 9  
 end
 
 puts "Enter the Fahrenheit temperature:"
