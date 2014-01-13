@@ -12,5 +12,4 @@ end
 
 puts "Enter the Fahrenheit temperature:"
 fahrenheit = gets.to_f
-celsius = convert(fahrenheit)
-puts "That's %.2f in Celsius." % celsius
+puts "That's %.2f in Celsius." % convert(fahrenheit) 
