@@ -10,9 +10,8 @@
 #
 
 def string_parser(string_input)
-  string_lines = string_input.split("\n")
-  1.upto(string_lines.count) do |n|
-    puts "Line #{n}: #{string_lines[n - 1]}"
+  string_input.lines.each.with_index(1) do | line, index |
+    puts "Line #{index}: #{line}"
   end
 end
 
