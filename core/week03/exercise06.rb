@@ -19,17 +19,42 @@
 # You enter: HELLO GRANDMA
 # Grandma responds: NO, NOT SINCE 1938!
 #
+# def you_say
+#   print "You enter: "
+#   gets.chomp
+# end
+# 
+# until (message = you_say) == 'BYE'
+#   if message == message.upcase
+#     puts "Grandma responds: NO, NOT SINCE #{rand(1930..1950)}"
+#   else
+#     puts "Grandma responds: HUH?! SPEAK UP, SONNY!"
+#   end
+# end
+# 
+# Refactor code:
+#
 def you_say
   print "You enter: "
   gets.chomp
 end
 
+def year_remembered(range = (1930..1950))
+  rand(range)
+end
+
+def shouted?(message)
+  message == message.upcase
+end
+
+def respond(message)
+  shouted?(message) ?
+    "Grandma responds: NO, NOT SINCE #{year_remembered}" :
+    "Grandma responds: HUH?! SPEAK UP, SONNY!"
+end
+
 until (message = you_say) == 'BYE'
-  if message == message.upcase
-    puts "Grandma responds: NO, NOT SINCE #{rand(1930..1950)}"
-  else
-    puts "Grandma responds: HUH?! SPEAK UP, SONNY!"
-  end
+  puts respond(message)
 end
 
 
