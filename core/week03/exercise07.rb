@@ -34,12 +34,13 @@ if file_name.nil?
   puts "Syntax to use: ruby exercise07.rb <file_name>"
 else
   file_content = File.read(file_name)
+  file_content.gsub!(/\r\n?/, "\n")
   puts "Character count: #{file_content.length}"
   puts "Character count (excluding spaces): #{file_content.gsub(' ', '').length}"
   puts "Line count: #{file_content.lines.count}"
   puts "Word count: #{words = file_content.scan(/\S+/).count}"
   puts "Sentence count: #{sentences = file_content.scan(/[.?!]/).count}"
-  puts "Paragraph count: #{paragraphs = file_content.scan(/\n\n/).count}"
+  puts "Paragraph count: #{paragraphs = file_content.scan(/\n{2}/).count}"
   puts "Average number of words per sentence: #{"%.2f" %(words.to_f / sentences)}"
   puts "Average number of sentences per paragraph: #{"%.2f" %(sentences.to_f / paragraphs)}"
 end
